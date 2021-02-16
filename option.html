@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./style.css">
     <title>LeetCode Upload</title>
 </head>
+
 <body>
-    <button id="btn">Upload To Drive</button>
-    <script src="option.js"></script>
+    <div class="upload">
+        <button class="btn-upload">Upload To Drive</button>
+        <p class="text-target">目標：未選擇路徑</p>
+    </div>
+    <div class="list">
+        <span>Google Drive 資料夾列表</span>
+        <div class="btn-folder-list"></div>
+        <script src="option.js"></script>
+        <script src="content.js"></script>
+    </div>
 </body>
+
 </html>
