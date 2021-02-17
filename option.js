@@ -15,8 +15,8 @@ let folderForm = document.querySelector('.folder-form');
 window.onload = () => {
   chrome.storage.sync.get(['folder_id', 'folder_name'], (result) => {
     if (result.folder_id === undefined && result.folder_name === undefined ||
-      result.folder_id === '' && result.folder_name === '') {
-    btnFolderChange.style.display = 'none';
+        result.folder_id === '' && result.folder_name === '') {
+      btnFolderChange.style.display = 'none';
       chrome.runtime.sendMessage({ methods: "get-list" }, (response) => {
         let str = '';
         let folders = response.files.filter((item) => {
@@ -29,7 +29,8 @@ window.onload = () => {
       });
     } else {
       textTarget.innerText = `Target：${result.folder_name}`;
-    btnFolderChange.style.display = 'block';
+      btnFolderChange.style.display = 'block';
+      btnFolderCreate.style.display = 'none';
       list.style.display = 'none';
     }
   });
@@ -39,6 +40,9 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   switch(message.methods) {
     case 'response-message':
       alert(message.message);
+      if (message.success)
+        window.location.reload();
+      break;
   }
 })
 
@@ -70,8 +74,7 @@ btnFolderCancel.addEventListener("click", (e) => {
 
 btnFolderSubmit.addEventListener("click", (e) => {
   let folderName = textFolderName.value;
-  console.log(folderName);
-  window.location.reload();
+  chrome.runtime.sendMessage({ methods: "create-folder", name: folderName })
 })
 
 btnUpload.addEventListener("click", (e) => {
