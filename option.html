@@ -10,14 +10,31 @@
 
 <body>
     <div class="upload">
-        <button class="btn-upload">Upload To Drive</button>
-        <p class="text-target">目標：未選擇路徑</p>
+        <button class="btn-upload">
+            <i class="fas fa-cloud-upload-alt"></i>
+            Upload To Drive
+        </button>
+        <p class="text-target">Target : No path selected...</p>
+    </div>
+    <button class="btn-folder-change">
+        <i class="fas fa-sync-alt"></i>
+        Change Target Folder
+    </button>
+    <button class="btn-folder-create">
+        <i class="fas fa-folder-plus"></i>
+        Create Folder
+    </button>
+    <div class="folder-form">
+        <input type="text" class="btn-folder-name" placeholder="Folder Name">
+        <button class="btn-folder-submit">Create</button>
+        <button class="btn-folder-cancel">Cancel</button>
     </div>
     <div class="list">
-        <span>Google Drive 資料夾列表</span>
+        <span>Google Drive Folder List</span>
         <div class="btn-folder-list"></div>
-        <script src="option.js"></script>
     </div>
+    <script src="https://kit.fontawesome.com/3465a0062b.js" crossorigin="anonymous"></script>
+    <script src="option.js"></script>
 </body>
 
 </html>

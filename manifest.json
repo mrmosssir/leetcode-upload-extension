@@ -50,5 +50,6 @@
             "https://www.googleapis.com/auth/drive.appdata",
             "https://www.googleapis.com/auth/drive.file"
         ]
-    }
+    },
+    "content_security_policy": "script-src 'self' https://kit.fontawesome.com; object-src 'self'"
 }

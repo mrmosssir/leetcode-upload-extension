@@ -1,5 +1,6 @@
 body {
     width: 300px;
+    background: #20201b;
 }
 
 .upload {
@@ -10,21 +11,64 @@ body {
 
 .upload .btn-upload {
     display: block;
+    cursor: pointer;
 }
 
-span, .btn-folder-list button {
+.upload p {
+    color: white;
+    font-weight: bold;
+}
+
+.list span {
+    color: white;
+    font-weight: bold;
+    padding: 5px 0;
+}
+
+.list span,
+.btn-folder-list button,
+.btn-folder-change,
+.btn-folder-create {
     display: block;
     width: 100%;
+    cursor: pointer;
+}
+
+.btn-folder-list i {
+    margin: 0px 5px;
+}
+
+.folder-form {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.folder-form input {
+    display: inline-block;
+    width: 60%;
+    height: 35px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 2px solid grey;
+    padding: 0px 10px;
+    background: #141416;
+    color: white;
+    font-weight: bold;
+    outline: none;
 }
 
 button {
-    height: 30px;
+    height: 40px;
     margin: 5px 0;
     box-sizing: border-box;
     border-width: 0px;
-    background: #ece9e8;
+    border-radius: 5px;
+    background: #0e0e10;
+    color: #f69a13;
+    font-weight: bold;
 }
 
 button:hover {
-    background: #e7dcd4;
+    background: #131315;
 }

@@ -11,7 +11,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         console.log("done");
         xhr.onreadystatechange = function() {
             if (this.readyState === 4 && this.status === 200) {
-              console.log(this.response.files);
                 sendResponse({ files: this.response.files });
             } else if (this.readyState === 4 && this.status !== 200) {
               console.log(this);
@@ -53,8 +52,14 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         xhr.open('POST', 'https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart');
         xhr.setRequestHeader('Authorization', 'Bearer ' + token);
         xhr.responseType = 'json';
-
-        xhr.send(form);
+        try {
+          xhr.send(form);
+          chrome.runtime.sendMessage({ methods: 'response-message', success: true, message: 'Leetcode Backup Success' });
+          // sendResponse({ success: true, message: 'Leetcode Backup Success' });
+        } catch (error) {
+          chrome.runtime.sendMessage({ methods: 'response-message', success: false, message: error });
+          // sendResponse({ success: false, message: error });
+        }
       });
       break;
   }
