@@ -41,7 +41,6 @@ btnUpload.addEventListener("click", (e) => {
     if (result.folder_id === undefined) {
       alert("Google Drive 目標資料夾未設定");
     } else {
-      alert('done');
       chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         chrome.tabs.sendMessage(tabs[0].id, { methods: "call-backup", id: result.folder_id });
       });

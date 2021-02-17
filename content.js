@@ -1,5 +1,7 @@
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+
   console.log("content");
+  
   if (message.methods === "call-backup") {
     let title = document.querySelector('div[data-cy="question-title"]')
       .textContent;
@@ -8,7 +10,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     codes.forEach((code) => {
       codeArray.push(code.textContent);
     });
-    // console.log(codeArray);
     chrome.runtime.sendMessage({
       methods: "send-backup",
       data: {

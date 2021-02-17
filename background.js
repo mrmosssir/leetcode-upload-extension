@@ -1,14 +1,7 @@
-// window.onload = () => {
-//   let head = document.getElementsByTagName("head")[0];
-//   let script = document.createElement("script");
-//   script.type = "text/javascript";
-//   script.src = "https://apis.google.com/js/api.js";
-//   head.appendChild(script);
-// 
-// }
-
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  console.log("background message");
+
+  // console.log("background message");
+  
   switch (message.methods) {
     case "get-list":
       chrome.identity.getAuthToken({
@@ -31,25 +24,22 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         xhr.send();
       })
       break;
-    case "send-backup":
 
+    case "send-backup":
       let data = message.data;
       let title = data.title;
       let code = "";
       data.code.forEach((item) => {
         code += `${item}\n`;
       });
-      console.log(message);
       chrome.identity.getAuthToken({
         interactive: true
       }, (token) => {
-        console.log(message.id);
         let metadata = {
           name: `${title}.js`,
           mimeType: 'text/javascript',
-          parents: [message.id],
+          parents: [message.data.id],
         };
-
         let file = new Blob([code], {
           type: 'text/javascript'
         });

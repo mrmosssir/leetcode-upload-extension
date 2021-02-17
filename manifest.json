@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "LeetCode Upload",
-    "version": "0.1",
+    "version": "0.1.1",
     "description": "This project can upload leetcode record to the google cloud drive.",
     "icons": {
         "16": "images/icon16.png",
@@ -9,10 +9,16 @@
         "48": "images/icon48.png",
         "128": "images/icon128.png"
     },
-    "content_scripts": [{
-        "matches": ["https://leetcode.com/problems/*"],
-        "js": ["content.js"]
-    }],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://leetcode.com/problems/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
     "browser_action": {
         "default_icon": {
             "16": "images/icon16.png",
@@ -39,6 +45,10 @@
     "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArAVXWqLDgx42qd2X33frJSYlFs0oBc8enekLS4orMKoRjykS4AxW5gxhb5hMKaCY4jiHY2y+1zIbIp8Zr0qwsYms1MvDaKrgSDXqKVCani3ZGMdIbBwS8hAG7j3aCW+UkA+A3IFyhe6J/JPnER9X85Iuo++PFEjkVZcBc6w2pM4QnKrM13v9Ghy2gDWYNRbGBWHR+hTnOCelKoXuDeVFG5Q+a6TH6B0KWXx2SkEGWVWBeQRzwVOFUy4xtUmGd320yhIgv10nMk83xn99Vugv3m74ngYQr2KmD1kUIO0Y3hW86lk6QUq7WrxQZuDvog1jTkRh33o2wbMlvJZSB2WFkwIDAQAB",
     "oauth2": {
         "client_id": "451555466829-ojfcnqt2prrmdj57va7477bcflmo06lv.apps.googleusercontent.com",
-        "scopes": ["https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.appdata", "https://www.googleapis.com/auth/drive.file"]
+        "scopes": [
+            "https://www.googleapis.com/auth/drive",
+            "https://www.googleapis.com/auth/drive.appdata",
+            "https://www.googleapis.com/auth/drive.file"
+        ]
     }
 }
