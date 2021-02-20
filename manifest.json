@@ -4,10 +4,10 @@
     "version": "0.1.2",
     "description": "This project can upload leetcode record to the google cloud drive.",
     "icons": {
-        "16": "images/icon16.png",
-        "32": "images/icon32.png",
-        "48": "images/icon48.png",
-        "128": "images/icon128.png"
+        "16": "images/icon.png",
+        "32": "images/icon.png",
+        "48": "images/icon.png",
+        "128": "images/icon.png"
     },
     "content_scripts": [
         {
@@ -21,10 +21,10 @@
     ],
     "browser_action": {
         "default_icon": {
-            "16": "images/icon16.png",
-            "32": "images/icon32.png",
-            "48": "images/icon48.png",
-            "128": "images/icon128.png"
+            "16": "images/icon.png",
+            "32": "images/icon.png",
+            "48": "images/icon.png",
+            "128": "images/icon.png"
         },
         "default_title": "LeetCode Upload",
         "default_popup": "option.html"
